@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Yah/static/css/main.1277e853.css",
+    "main.js": "/Yah/static/js/main.91bb30d9.js",
+    "static/js/453.9be0922f.chunk.js": "/Yah/static/js/453.9be0922f.chunk.js",
+    "index.html": "/Yah/index.html",
+    "main.1277e853.css.map": "/Yah/static/css/main.1277e853.css.map",
+    "main.91bb30d9.js.map": "/Yah/static/js/main.91bb30d9.js.map",
+    "453.9be0922f.chunk.js.map": "/Yah/static/js/453.9be0922f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1277e853.css",
+    "static/js/main.91bb30d9.js"
+  ]
+}
