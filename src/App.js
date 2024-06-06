@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+import { requestToGroqAI } from "./utils/groq";
 
 function App() {
+  const [data, setData] = useState("");
+  
+  const handleSubmit = async () => {
+    try {
+      const content = document.getElementById('content').value;
+      const ai = await requestToGroqAI(content);
+      setData(ai);
+    } catch (error) {
+      console.error("Error fetching data:", error.message);
+      setData("Error fetching data. Please try again later.");
+    }
+  };
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <main className="flex flex-col min-h-[80vh] justify-center items-center">
+      <h1 className="text-indigo-500">REACT GROQ</h1>
+      <form className="flex flex-col gap-4 py-4">
+        <input
+          className="py2 px-4 text-md rounded-md"
+          placeholder="Masukan Pertanyaan"
+          id="content"
+          type="text"
+        />
+
+        <button
+          onClick={handleSubmit}
+          type="button"
+          className="bg-indigo-500 py-2 px-4 font-bold rounded-md"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Kirim
+        </button>
+      </form>
+      <div>{data}</div>
+    </main>
   );
 }
 
